@@ -34,10 +34,10 @@ public class Message {
     private MessageType type = MessageType.INFO;
 
     @Column(nullable = false)
-    private boolean isRead = false;
+   private boolean read = false;
 
     @Column(nullable = false)
-    private boolean isBroadcast = false;
+    private boolean broadcast = false;
 
     @CreationTimestamp
     private LocalDateTime timestamp;

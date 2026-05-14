@@ -152,14 +152,14 @@ public class DataSeeder implements CommandLineRunner {
             .body("Unauthorized access attempt detected on sensor D-04. Immediate sweep required.")
             .type(Message.MessageType.ALERT)
             .sender(admin).recipient(emp)
-            .isBroadcast(false).isRead(false).build();
+            .broadcast(false).read(false).build();
 
         Message broadcast = Message.builder()
             .subject("Scheduled Maintenance — Firmware Update")
             .body("All IoT nodes in Sector A will be taken offline Jan 20 02:00–06:00 for updates.")
             .type(Message.MessageType.BROADCAST)
             .sender(admin).recipient(emp)
-            .isBroadcast(true).isRead(false).build();
+            .broadcast(true).read(false).build();
 
         messageRepository.save(alert);
         messageRepository.save(broadcast);

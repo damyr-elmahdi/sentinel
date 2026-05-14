@@ -8,7 +8,7 @@ import lombok.*;
 //  AUTH DTOs
 // ════════════════════════════════════════════════════════
 
-public class AuthDtos {
+class AuthDtos  {
 
     @Data
     public static class LoginRequest {
@@ -18,6 +18,7 @@ public class AuthDtos {
         @NotBlank @Size(min = 6, max = 100)
         private String password;
     }
+    
 
     @Data
     public static class RegisterRequest {
@@ -40,6 +41,13 @@ public class AuthDtos {
         private String type = "Bearer";
         private UserDto user;
     }
+
+    @Data @Builder @NoArgsConstructor @AllArgsConstructor
+    public static class AuthResponse {
+    private String token;
+    private String type = "Bearer";
+    private UserDto user;
+}
 
     @Data @Builder @NoArgsConstructor @AllArgsConstructor
     public static class UserDto {
